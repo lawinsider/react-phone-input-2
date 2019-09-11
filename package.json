@@ -3,6 +3,7 @@
   "version": "2.9.5",
   "description": "A react component to format phone numbers",
   "main": "dist/lib.js",
+  "module": "src/index.js",
   "scripts": {
     "test": "jest",
     "start": "TARGET=dev NODE_ENV=development webpack-dev-server --progress",
@@ -23,12 +24,6 @@
     "javascript",
     "international",
     "tel"
-  ],
-  "files": [
-    "LICENSE",
-    "README.md",
-    "dist/lib.js",
-    "dist/style.css"
   ],
   "author": "Nikita Lebedev <bloomber111@gmail.com> (http://github.com/bl00mber)",
   "contributors": [
