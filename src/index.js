@@ -837,5 +837,3 @@ class ReactPhoneInput extends React.Component {
 }
 
 export default ReactPhoneInput;
-
-if (__DEV__) require('./demo.js');
