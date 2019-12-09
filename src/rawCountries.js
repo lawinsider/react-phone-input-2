@@ -14,9 +14,9 @@
 //
 // Sub-regions:
 // ['north-america', 'south-america', 'central-america', 'carribean',
-//  'european-union', 'ex-ussr', 'middle-east', 'north-africa']
+//  'eu-union', 'ex-ussr', 'ex-yugos', 'baltic', 'middle-east', 'north-africa']
 
-const rawAllCountries = [
+const rawCountries = [
   [
     'Afghanistan',
     ['asia'],
@@ -93,7 +93,7 @@ const rawAllCountries = [
   ],
   [
     'Austria',
-    ['europe', 'european-union'],
+    ['europe', 'eu-union'],
     'at',
     '43'
   ],
@@ -136,7 +136,7 @@ const rawAllCountries = [
   ],
   [
     'Belgium',
-    ['europe', 'european-union'],
+    ['europe', 'eu-union'],
     'be',
     '32',
     '+.. ... .. .. ..'
@@ -173,7 +173,7 @@ const rawAllCountries = [
   ],
   [
     'Bosnia and Herzegovina',
-    ['europe'],
+    ['europe', 'ex-yugos'],
     'ba',
     '387'
   ],
@@ -210,7 +210,7 @@ const rawAllCountries = [
   ],
   [
     'Bulgaria',
-    ['europe', 'european-union'],
+    ['europe', 'eu-union'],
     'bg',
     '359'
   ],
@@ -244,7 +244,7 @@ const rawAllCountries = [
     'ca',
     '1',
     '+. (...) ...-....',
-    1, ['204', '236', '249', '250', '289', '306', '343', '365', '387', '403', '416', '418', '431', '437', '438', '450', '506', '514', '519', '548', '579', '581', '587', '604', '613', '639', '647', '672', '705', '709', '742', '778', '780', '782', '807', '819', '825', '867', '873', '902', '905']
+    1, ['204', '226', '236', '249', '250', '289', '306', '343', '365', '387', '403', '416', '418', '431', '437', '438', '450', '506', '514', '519', '548', '579', '581', '587', '604', '613', '639', '647', '672', '705', '709', '742', '778', '780', '782', '807', '819', '825', '867', '873', '902', '905']
   ],
   [
     'Cape Verde',
@@ -336,7 +336,7 @@ const rawAllCountries = [
   ],
   [
     'Croatia',
-    ['europe', 'european-union'],
+    ['europe', 'eu-union', 'ex-yugos'],
     'hr',
     '385'
   ],
@@ -356,20 +356,20 @@ const rawAllCountries = [
   ],
   [
     'Cyprus',
-    ['europe', 'european-union'],
+    ['europe', 'eu-union'],
     'cy',
     '357',
     '+... .. ......'
   ],
   [
     'Czech Republic',
-    ['europe', 'european-union'],
+    ['europe', 'eu-union'],
     'cz',
     '420'
   ],
   [
     'Denmark',
-    ['europe', 'european-union'],
+    ['europe', 'eu-union', 'baltic'],
     'dk',
     '45',
     '+.. .. .. .. ..'
@@ -427,7 +427,7 @@ const rawAllCountries = [
   ],
   [
     'Estonia',
-    ['europe', 'european-union', 'ex-ussr'],
+    ['europe', 'eu-union', 'ex-ussr', 'baltic'],
     'ee',
     '372',
     '+... .... ......'
@@ -458,14 +458,14 @@ const rawAllCountries = [
   ],
   [
     'Finland',
-    ['europe', 'european-union'],
+    ['europe', 'eu-union', 'baltic'],
     'fi',
     '358',
     '+... .. ... .. ..'
   ],
   [
     'France',
-    ['europe', 'european-union'],
+    ['europe', 'eu-union'],
     'fr',
     '33',
     '+.. . .. .. .. ..'
@@ -502,7 +502,7 @@ const rawAllCountries = [
   ],
   [
     'Germany',
-    ['europe', 'european-union'],
+    ['europe', 'eu-union', 'baltic'],
     'de',
     '49',
     '+.. .... ........'
@@ -521,7 +521,7 @@ const rawAllCountries = [
   ],
   [
     'Greece',
-    ['europe', 'european-union'],
+    ['europe', 'eu-union'],
     'gr',
     '30'
   ],
@@ -598,7 +598,7 @@ const rawAllCountries = [
   ],
   [
     'Hungary',
-    ['europe', 'european-union'],
+    ['europe', 'eu-union'],
     'hu',
     '36'
   ],
@@ -636,7 +636,7 @@ const rawAllCountries = [
   ],
   [
     'Ireland',
-    ['europe', 'european-union'],
+    ['europe', 'eu-union'],
     'ie',
     '353',
     '+... .. .......'
@@ -650,7 +650,7 @@ const rawAllCountries = [
   ],
   [
     'Italy',
-    ['europe', 'european-union'],
+    ['europe', 'eu-union'],
     'it',
     '39',
     '+.. ... .......',
@@ -681,7 +681,7 @@ const rawAllCountries = [
     'kz',
     '7',
     '+. ... ...-..-..',
-    1, ['313', '327', '7172', '312', '73622', '321', '324', '336', '318', '315', '325', '311', '326', '310']
+    1, ['310', '311', '312', '313', '315', '318', '321', '324', '325', '326', '327', '336', '7172', '73622']
   ],
   [
     'Kenya',
@@ -694,6 +694,12 @@ const rawAllCountries = [
     ['oceania'],
     'ki',
     '686'
+  ],
+  [
+    'Kosovo',
+    ['europe', 'ex-yugos'],
+    'xk',
+    '383'
   ],
   [
     'Kuwait',
@@ -715,7 +721,7 @@ const rawAllCountries = [
   ],
   [
     'Latvia',
-    ['europe', 'european-union', 'ex-ussr'],
+    ['europe', 'eu-union', 'ex-ussr', 'baltic'],
     'lv',
     '371'
   ],
@@ -751,13 +757,13 @@ const rawAllCountries = [
   ],
   [
     'Lithuania',
-    ['europe', 'european-union', 'ex-ussr'],
+    ['europe', 'eu-union', 'ex-ussr', 'baltic'],
     'lt',
     '370'
   ],
   [
     'Luxembourg',
-    ['europe', 'european-union'],
+    ['europe', 'eu-union'],
     'lu',
     '352'
   ],
@@ -769,7 +775,7 @@ const rawAllCountries = [
   ],
   [
     'Macedonia',
-    ['europe'],
+    ['europe', 'ex-yugos'],
     'mk',
     '389'
   ],
@@ -806,7 +812,7 @@ const rawAllCountries = [
   ],
   [
     'Malta',
-    ['europe', 'european-union'],
+    ['europe', 'eu-union'],
     'mt',
     '356'
   ],
@@ -867,7 +873,7 @@ const rawAllCountries = [
   ],
   [
     'Montenegro',
-    ['europe'],
+    ['europe', 'ex-yugos'],
     'me',
     '382'
   ],
@@ -915,7 +921,7 @@ const rawAllCountries = [
   ],
   [
     'Netherlands',
-    ['europe', 'european-union'],
+    ['europe', 'eu-union'],
     'nl',
     '31',
     '+.. .. ........'
@@ -977,7 +983,7 @@ const rawAllCountries = [
   ],
   [
     'Norway',
-    ['europe'],
+    ['europe', 'baltic'],
     'no',
     '47',
     '+.. ... .. ...'
@@ -1040,14 +1046,14 @@ const rawAllCountries = [
   ],
   [
     'Poland',
-    ['europe', 'european-union'],
+    ['europe', 'eu-union', 'baltic'],
     'pl',
     '48',
     '+.. ...-...-...'
   ],
   [
     'Portugal',
-    ['europe', 'european-union'],
+    ['europe', 'eu-union'],
     'pt',
     '351'
   ],
@@ -1073,13 +1079,13 @@ const rawAllCountries = [
   ],
   [
     'Romania',
-    ['europe', 'european-union'],
+    ['europe', 'eu-union'],
     'ro',
     '40'
   ],
   [
     'Russia',
-    ['europe', 'asia', 'ex-ussr'],
+    ['europe', 'asia', 'ex-ussr', 'baltic'],
     'ru',
     '7',
     '+. (...) ...-..-..',
@@ -1169,7 +1175,7 @@ const rawAllCountries = [
   ],
   [
     'Serbia',
-    ['europe'],
+    ['europe', 'ex-yugos'],
     'rs',
     '381'
   ],
@@ -1200,13 +1206,13 @@ const rawAllCountries = [
   ],
   [
     'Slovakia',
-    ['europe', 'european-union'],
+    ['europe', 'eu-union'],
     'sk',
     '421'
   ],
   [
     'Slovenia',
-    ['europe', 'european-union'],
+    ['europe', 'eu-union', 'ex-yugos'],
     'si',
     '386'
   ],
@@ -1243,7 +1249,7 @@ const rawAllCountries = [
   ],
   [
     'Spain',
-    ['europe', 'european-union'],
+    ['europe', 'eu-union'],
     'es',
     '34',
     '+.. ... ... ...'
@@ -1274,7 +1280,7 @@ const rawAllCountries = [
   ],
   [
     'Sweden',
-    ['europe', 'european-union'],
+    ['europe', 'eu-union', 'baltic'],
     'se',
     '46',
     '+.. (...) ...-...'
@@ -1404,7 +1410,7 @@ const rawAllCountries = [
   ],
   [
     'United Kingdom',
-    ['europe', 'european-union'],
+    ['europe', 'eu-union'],
     'gb',
     '44',
     '+.. .... ......'
@@ -1479,52 +1485,6 @@ const rawAllCountries = [
     'zw',
     '263'
   ]
-];
+]
 
-let allCountryCodes = {};
-
-function addCountryCode(iso2, dialCode, priority) {
-  if (!(dialCode in allCountryCodes)) {
-    allCountryCodes[dialCode] = [];
-  }
-  const index = priority || 0;
-  allCountryCodes[dialCode][index] = iso2;
-};
-
-const allCountries = [].concat(...rawAllCountries.map((country) => {
-  const countryItem = {
-    name: country[0],
-    regions: country[1],
-    iso2: country[2],
-    dialCode: country[3],
-    format: country[4] || undefined,
-    priority: country[5] || 0,
-    hasAreaCodes: country[6] ? true : false,
-  };
-
-  const areaItems = [];
-
-  country[6] && country[6].map((areaCode) => {
-    const areaItem = {...countryItem};
-    areaItem.regions = country[1];
-    areaItem.dialCode = country[3] + areaCode;
-    areaItem.isAreaCode = true;
-
-    areaItems.push(areaItem);
-
-    addCountryCode(country[2], areaItem.dialCode);
-  });
-
-  addCountryCode(
-    countryItem.iso2,
-    countryItem.dialCode,
-    countryItem.hasAreaCodes
-  );
-
-  return (areaItems.length > 0) ? [countryItem, ...areaItems] : [countryItem];
-}));
-
-export default {
-  allCountries: allCountries,
-  allCountryCodes: allCountryCodes
-};
+export default rawCountries

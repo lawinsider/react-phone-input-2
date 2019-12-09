@@ -1,3 +1,30 @@
+## 2.11.0 (December 4, 2019)
+* Add languages: jp, cn, pt, it, ir, ar, id
+* Replace `disableAreaCodes` to `enableAreaCodes`
+* `defaultCountry` → `country`
+* `enableSearchField` → `enableSearch`
+* Search update, search countries firstly using iso2 codes
+* Set countries using dialCode
+* Add Kosovo, subregions: ex-yugos, baltic
+* Add `defaultMask`, `prefix`
+* Copy number from input without formatting
+* Select whole number when double click
+* Pass event object to onChange handler
+* Style update: style.css high-res.css material.css bootstrap.css semantic-ui.css plain.css
+
+
+## 2.10.0 (September 18, 2019)
+* Add languages: es, de, ru, fr
+* Custom `areaCodes`
+* Search localized country name #123
+* `renderStringAsFlag` to show string instead of flag
+* Fix input freezing on area codes #119
+* Add `preserveOrder` #109
+* Better keyboard support
+* Make lib work inside shadow DOM #105 [@newying61](https://github.com/newying61)
+* IE Polyfyll startswith #102
+
+
 ## 2.9.3 (April 8, 2019)
 * SSR support (removed references to browser objects)
 * Change importing method
