@@ -1,15 +1,15 @@
 import React from 'react';
 import { render } from 'react-dom';
 import PhoneInput from '../../src/index';
-// import '../../src/style/style.less';
+// import '../../src/style/material.less'; // enable on dev
 
 
 class Demo extends React.Component {
   state = { currentStyle: '', fetch: true }
 
   componentDidMount () {
-    this.loadCSS('material')
-    // this.setState({ fetch: false })
+    this.loadCSS('material') // disable on dev
+    // this.setState({ fetch: false }) // enable on dev
   }
 
   updateStyle = (e) => {
@@ -80,7 +80,7 @@ class Demo extends React.Component {
         </div>
 
         <div style={{display: 'inline-block', marginLeft: '40px', position: 'absolute', top: '30px', left: '560px'}}>
-          <p>{"import 'react-phone-input-2/lib/"+currentStyle+".css"}</p>
+          <p>{"import 'react-phone-input-2/lib/"+currentStyle+".css'"}</p>
         </div>
       </div>
     )
