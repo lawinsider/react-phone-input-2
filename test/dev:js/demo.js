@@ -67,11 +67,18 @@ class Demo extends React.Component {
           <p>Auto country detect by value</p>
           <PhoneInput
             value='+3802343252'
+            priority={{ca: 0, us: 1, kz: 0, ru: 1}}
           />
-          <p>Enabled area codes with enableAreaCodes</p>
+          <p>Local area codes with enableAreaCodes</p>
           <PhoneInput
             country='us'
             enableAreaCodes
+          />
+          <p>Dependent territories with enableTerritories</p>
+          <PhoneInput
+            country='vg'
+            enableSearch
+            enableTerritories
           />
           <p>Disabled flag by default</p>
           <p>Customizable placeholder</p>
@@ -108,7 +115,6 @@ class Demo extends React.Component {
           <PhoneInput
             country='ca'
             regions={['north-america', 'carribean']}
-            enableAreaCodes
           />
           <p>Disabled dropdown and country code</p>
           <PhoneInput
@@ -123,15 +129,21 @@ class Demo extends React.Component {
           <p>Autofocus</p>
           <PhoneInput
             country='de'
-            onlyCountries={['de', 'es']}
+            onlyCountries={['de', 'es', 'us']}
             localization={{'Germany': 'Deutschland', 'Spain': 'España'}}
-            enableAreaCodes
             countryCodeEditable={false}
             inputExtraProps={{
               name: 'tel',
               required: true,
               autoFocus: true
             }}
+          />
+          <p>enableAreaCodeStretch: +61 (2), +61 (02)</p>
+          <PhoneInput
+            onlyCountries={['au']}
+            enableAreaCodes
+            enableAreaCodeStretch
+            country='au'
           />
         </div>
         <div style={{display: 'inline-block', marginLeft: '40px', verticalAlign: 'top'}}>
@@ -152,30 +164,45 @@ class Demo extends React.Component {
             searchStyle={{margin: '0', width: '97%', height: '30px'}}
             enableSearch
             disableSearchIcon
+            searchNotFound='Not found'
+            prefix=''
           />
           <p>Custom masks & area codes</p>
           <PhoneInput
             country='at'
             onlyCountries={['fr', 'at', 'gr', 'us']}
-            masks={{fr: '+.. (...) ..-..-..', at: '+.. (....) ...-....', zz: '+.. ... ...'}}
+            masks={{fr: '(...) ..-..-..', at: '(....) ...-....', zz: '... ...'}}
             areaCodes={{gr: ['2694', '2647'], fr: ['369', '463'], us: ['300']}}
+            enableAreaCodes
           />
           <PhoneInput
             country='eu'
             onlyCountries={['fr', 'at', 'gr', 'us']}
-            masks={{fr: '+.. (...) ..-..-..', at: '+.. (....) ...-....', zz: '+.. ... ...'}}
+            masks={{fr: '(...) ..-..-..', at: '(....) ...-....', zz: '... ...'}}
             areaCodes={{gr: ['2694', '2647'], fr: ['369', '463'], us: ['300']}}
+            enableAreaCodes
           />
           <p>State manipulations</p>
           <PhoneInput
             value={this.state.value}
-            onChange={(value, country, e) => {console.log(value, country, e); this.setState({ value })}}
-            prefix=''
+            onChange={(value, country, e, formattedValue) => {console.log(value, country, e, formattedValue);
+              this.setState({ value })}}
             enableAreaCodes
+            defaultErrorMessage='Invalid value'
+            isValid={(value, country) => {
+              if (value.match(/12345/)) {
+                return 'Invalid value: '+value+', '+country.name
+              } else if (value.match(/1234/)) {
+                return false
+              } else {
+                return true
+              }
+            }}
           />
           <PhoneInput
             containerStyle={{marginBottom: '15px'}}
             country={this.state.country}
+            prefix=''
             enableAreaCodes
           />
           <button onClick={() => {
