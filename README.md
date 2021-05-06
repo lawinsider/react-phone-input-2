@@ -121,7 +121,7 @@ import 'react-phone-input-2/lib/style.css'
   <tr>
     <td> enableLongNumbers </td>
     <td> false </td>
-    <td> </td>
+    <td> boolean/number </td>
   </tr>
   <tr>
     <td> countryCodeEditable </td>
@@ -299,7 +299,7 @@ Country data object not returns from onKeyDown event
 ### Predefined localization
 `es` Spanish, `de` Deutsch, `ru` Russian, `fr` French<br/>
 `jp` Japanese, `cn` Chinese, `pt` Portuguese, `it` Italian<br/>
-`ir` Iranian, `ar` Arabic, `id` Indonesian
+`ir` Iranian, `ar` Arabic, `tr` Turkish, `id` Indonesian
 
 ```jsx
 import es from 'react-phone-input-2/lang/es.json'
@@ -318,7 +318,9 @@ import es from 'react-phone-input-2/lang/es.json'
 />
 ```
 
+#### Flexible mask
 If `enableAreaCodeStretch` is added, the part of the mask with the area code will not stretch to length of the respective section of phone mask.
+Example: `+61 (2), +61 (02)`
 
 ### Custom masks
 ```jsx
@@ -392,7 +394,15 @@ If `enableAreaCodeStretch` is added, the part of the mask with the area code wil
     <td> string </td>
   </tr>
   <tr>
+    <td> specialLabel </td>
+    <td> string </td>
+  </tr>
+  <tr>
     <td> disableInitialCountryGuess </td>
+    <td> false </td>
+  </tr>
+  <tr>
+    <td> disableCountryGuess </td>
     <td> false </td>
   </tr>
 </table>
@@ -456,7 +466,7 @@ import startsWith from 'lodash.startswith';
 ```
 
 ### Clear country
-To clear country, pass `null` as value.
+To clear `country`, pass `null` as `value`.
 
 ### CDN
 ```html
@@ -464,7 +474,9 @@ To clear country, pass `null` as value.
 ```
 
 ## Contributing
-Code style changes not allowed
+- Code style changes not allowed
+- Do not create issues about incorrect or missing country masks (of already present countries) or absent area codes (they will be closed). Only create issues if the subject is an actual mechanism that is not present in the component. Otherwise create a PR with a link that proves the correctness of your newly suggested mask or list of area codes
+- Do not send new languages
 
 ## License
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/bl00mber/react-phone-input-2/blob/master/LICENSE)
